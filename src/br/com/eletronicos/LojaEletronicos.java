@@ -88,4 +88,12 @@ public class LojaEletronicos {
         notaFiscal = notaFiscal + "Valor final: R$" + precoFinal;
         return notaFiscal;
     }
+    public String mostrarProdutos(){
+        String todosProdutos = "";
+        for (Produto produto:this.produtos){
+            todosProdutos = todosProdutos+ produto.getNomeProduto() + " R$" + produto.getPreco() + "\n";
+        }
+        return todosProdutos;
+    }
+
 }

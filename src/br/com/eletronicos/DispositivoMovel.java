@@ -5,11 +5,11 @@ import java.util.Objects;
 public class DispositivoMovel extends Eletronico {
 
     private String tipoTela;
-    private int tamanhotela;
+    private double tamanhotela;
     private int quantArmazenamento;
 
 
-    public DispositivoMovel(int quantMemoriaRam, String processador, String tipoTela, int tamanhotela, int quantMemoria) {
+    public DispositivoMovel(int quantMemoriaRam, String processador, String tipoTela, double tamanhotela, int quantMemoria) {
         super(quantMemoriaRam,"Mobile",processador);
         this.tipoTela = tipoTela;
         this.tamanhotela = tamanhotela;
@@ -37,11 +37,11 @@ public class DispositivoMovel extends Eletronico {
         return Objects.hash(tipoTela, tamanhotela, quantArmazenamento);
     }
 
-    public int getTamanhotela() {
+    public double getTamanhotela() {
         return tamanhotela;
     }
 
-    public void setTamanhotela(int tamanhotela) {
+    public void setTamanhotela(double tamanhotela) {
         this.tamanhotela = tamanhotela;
     }
 

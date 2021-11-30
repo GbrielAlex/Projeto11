@@ -10,7 +10,8 @@ public class Produto{
     private Eletronico tipoEletronico;
     private String codigoBarra;
 
-    public Produto(double preco, String marca, Eletronico tipoEletronico, String codigoBarra) {
+    public Produto(String nomeProduto,double preco, String marca, Eletronico tipoEletronico, String codigoBarra) {
+        this.nomeProduto = nomeProduto;
         this.preco = preco;
         this.marca = marca;
         this.tipoEletronico = tipoEletronico;
