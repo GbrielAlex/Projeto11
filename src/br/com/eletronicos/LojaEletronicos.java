@@ -79,21 +79,45 @@ public class LojaEletronicos {
     public String emitirNotaFiscal(){
         String notaFiscal = this.getNome()+"\n"+
                 this.getLocal()+"\n"
-                + this.getCnpj()+"\n";
+                + "cnpj: "+ this.getCnpj()+"\n";
         double precoFinal = 0;
         for (Produto produto:this.carrinhoDeCompras){
-                notaFiscal = notaFiscal + produto.getNomeProduto() + produto.getPreco() +"\n";
+                notaFiscal = notaFiscal + produto.getNomeProduto() + " R$" + produto.getPreco() +"\n";
                 precoFinal = precoFinal + produto.getPreco();
         }
         notaFiscal = notaFiscal + "Valor final: R$" + precoFinal;
+        this.carrinhoDeCompras = new ArrayList<>();
         return notaFiscal;
     }
     public String mostrarProdutos(){
         String todosProdutos = "";
+        int cont = 1;
         for (Produto produto:this.produtos){
-            todosProdutos = todosProdutos+ produto.getNomeProduto() + " R$" + produto.getPreco() + "\n";
+            todosProdutos = todosProdutos+ cont + " - "+produto.getNomeProduto() + " R$" + produto.getPreco() + "\n";
+        cont ++;
         }
         return todosProdutos;
     }
+
+    public String mostrarProdutosCarrinho(){
+        String todosProdutos = "";
+        int cont = 1;
+        for (Produto produto:this.carrinhoDeCompras){
+            todosProdutos = todosProdutos + cont + " "+ produto.getNomeProduto() + " R$" + produto.getPreco() + "\n";
+        cont ++;
+        }
+        return todosProdutos;
+    }
+
+    public boolean removerProdutoCarrinho(Produto produto){
+        int cont = 0;
+        for (Produto produtoARemover: produtos)
+            if(produto.equals(produtoARemover)){
+                produtos.remove(cont);
+                return true;
+        }
+        return false;
+    }
+
 
 }

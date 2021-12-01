@@ -32,17 +32,18 @@ public class Produto{
         this.preco = preco;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Produto produto = (Produto) o;
-        return Objects.equals(codigoBarra, produto.codigoBarra);
+        return Objects.equals(nomeProduto, produto.nomeProduto) && Objects.equals(codigoBarra, produto.codigoBarra);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigoBarra);
+        return Objects.hash(nomeProduto, codigoBarra);
     }
 
     public String getMarca() {
