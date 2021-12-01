@@ -2,6 +2,8 @@ import br.com.eletronicos.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Locale;
+
 import  br.com.eletronicos.Produto;
 
 public class TrioDeTech {
@@ -23,17 +25,17 @@ public class TrioDeTech {
                 int opcaoDeCompra = Integer.parseInt(JOptionPane.showInputDialog("Escreva o numero referente ao item que deseja adcionar " +
                         "no seu carrinho \n " +trioDeTech.mostrarProdutos()));
                 String confirmacao = JOptionPane.showInputDialog(trioDeTech.getProdutos().get(opcaoDeCompra - 1).fichaTecnica() + "\n\nDigite SIM se deseja confirmar") ;
-                if (confirmacao.equals("sim")) {
+                if (confirmacao.toLowerCase().equals("sim")) {
                     JOptionPane.showMessageDialog(null,"Item adicionado no carrinho com sucesso");
                     trioDeTech.addProdutoNoCarrinho(trioDeTech.getProdutos().get(opcaoDeCompra - 1));
                 }else {
                     JOptionPane.showMessageDialog(null,"Ocorreu um erro tente novamente ");
                 }
-            }else if(opcaoCliente.equals("2")) {
-                String desejaRemocao  = JOptionPane.showInputDialog( trioDeTech.mostrarProdutosCarrinho());
-                if (desejaRemocao.equals("sim")){
+            }else if(opcaoCliente.toUpperCase().equals("2")) {
+                String desejaRemocao  = JOptionPane.showInputDialog("Se desejar remover algum item digite REMOVER\n" + trioDeTech.mostrarProdutosCarrinho());
+                if (desejaRemocao.toUpperCase().equals("REMOVER")){
                     int opcaoRemover = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero Referente ao produto que deseja remover do seu carrinho\n"+trioDeTech.mostrarProdutos()));
-                    trioDeTech.removerProdutoCarrinho(trioDeTech.getProdutos().get(opcaoRemover));
+                    trioDeTech.removerProdutoCarrinho(trioDeTech.getCarrinhoDeCompras().get(opcaoRemover-1));
                     JOptionPane.showMessageDialog(null,"Produto removido com sucesso");
                 }
             }else if(opcaoCliente.equals("3")){

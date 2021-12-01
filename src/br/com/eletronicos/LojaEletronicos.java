@@ -111,9 +111,9 @@ public class LojaEletronicos {
 
     public boolean removerProdutoCarrinho(Produto produto){
         int cont = 0;
-        for (Produto produtoARemover: produtos)
+        for (Produto produtoARemover: carrinhoDeCompras)
             if(produto.equals(produtoARemover)){
-                produtos.remove(cont);
+                carrinhoDeCompras.remove(cont);
                 return true;
         }
         return false;
