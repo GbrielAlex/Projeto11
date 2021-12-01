@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Laptop extends Eletronico {
 
     private String tipoTela;
-    private int tamanhotela;
+    private double tamanhotela;
     private int quantArmazenamento;
     private String tipoArmazenamento;
     private String modeloPlacaDeVideo;
@@ -23,7 +23,7 @@ public class Laptop extends Eletronico {
         return Objects.hash(tipoTela, tamanhotela, quantArmazenamento, tipoArmazenamento, modeloPlacaDeVideo);
     }
 
-    public Laptop(int quantMemoriaRam, String tipoMemoriaRam, String processador, String tipoTela, int tamanhotela, int quantArmazenamento, String tipoArmazenamento, String modeloPlacaDeVideo) {
+    public Laptop(int quantMemoriaRam, String tipoMemoriaRam, String processador, String tipoTela, double tamanhotela, int quantArmazenamento, String tipoArmazenamento, String modeloPlacaDeVideo) {
 
         super(quantMemoriaRam, tipoMemoriaRam, processador);
         this.tipoTela = tipoTela;
@@ -42,7 +42,7 @@ public class Laptop extends Eletronico {
         this.tipoTela = tipoTela;
     }
 
-    public int getTamanhotela() {
+    public double getTamanhotela() {
         return tamanhotela;
     }
 
@@ -50,7 +50,7 @@ public class Laptop extends Eletronico {
         this.tamanhotela = tamanhotela;
     }
 
-    public int getQuantArmazenamento() {
+    public double getQuantArmazenamento() {
         return quantArmazenamento;
     }
 
@@ -76,8 +76,8 @@ public class Laptop extends Eletronico {
 
     public String toString(){
         return "O produto vem com " + super.getQuantMemoriaRam() + "GB " + super.getTipoMemoriaRam() + ", com um processador "+
-                super.getProcessador() + "junto a uma placa de video " + this.getModeloPlacaDeVideo() + ", uma Tela " + this.getTipoTela() + "de "+
-                this.getTamanhotela() + "polegadas, e ainda um armazenamento em " + this.getTipoArmazenamento() + "de" + this.getQuantArmazenamento() +" GB";
+                super.getProcessador() + "junto a uma placa de video " + this.getModeloPlacaDeVideo() + "e uma Tela " + this.getTipoTela() + "de "+
+                this.getTamanhotela() + "polegadas, e ainda um armazenamento em " + this.getTipoArmazenamento() + "de" + this.getQuantArmazenamento() +" GBs";
     }
 
 }

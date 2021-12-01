@@ -55,7 +55,7 @@ public class DispositivoMovel extends Eletronico {
 
 
     public String toString(){
-        return ("O ptoduto tem "+super.getQuantMemoriaRam() + "GB de memoria ram com uma tela " + this.tipoTela + " de " + this.tamanhotela +
-                " polegas, e vem com um processador " + super.getProcessador() + " , mais "+ this.quantArmazenamento + " GB de amarzenamento");
+        return ("O produto tem "+super.getQuantMemoriaRam() + "GB de memoria ram, com uma tela " + this.tipoTela + " de " + this.tamanhotela +
+                " polegadas, e vem com um processador " + super.getProcessador() + " , mais "+ this.quantArmazenamento + " GB de amarzenamento");
     }
 }

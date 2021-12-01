@@ -63,9 +63,9 @@ public class Desktop extends Eletronico {
     }
 
     public String toString(){
-        return "o br.com.eletronicos.Produto tem " + super.getQuantMemoriaRam() + " de memoria ram "+ super.getTipoMemoriaRam() +
+        return "o produto tem " + super.getQuantMemoriaRam() + "GBs de memoria ram "+ super.getTipoMemoriaRam() +
                 "com um processador " + super.getProcessador() + " equipado com uma placa de video " + this.getModeloPlacaDeVideo() +
-                "e uma placa mãe " + this.getModeloPlacaMae() + "e um " + this.getTipoArmazenamento() + " de " + this.getQuantArmazenamento() +
-                "GB";
+                "junto a uma placa mãe " + this.getModeloPlacaMae() + "e um " + this.getTipoArmazenamento() + " de " + this.getQuantArmazenamento() +
+                "GBs";
     }
 }
