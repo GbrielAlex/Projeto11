@@ -1,4 +1,4 @@
-Laptop-Notebook Gamer 2AM E550-NVIDIA GeForce GTX 1050 3GB-Intel core i5 9400-8-SSD-128-Full HD-15.6-5999.00-Acer-176321679
+Laptop##Notebook Gamer 2AM E550##NVIDIA GeForce GTX 1050 3GB-Intel core i5 9400-8-SSD-128-Full HD-15.6-5999.00-Acer-176321679
 Laptop-Notebook IdeaPad Gaming-NVIDIA GeForce GTX 1650 4GB-Intel Core i5 10300H-8-SSD-128-Full HD-15.6-5999.00-Lenovo-097956876
 Laptop-Notebook Gamer Acer Nitro-NVIDIA GeForce GTX 1650 4GB-Ryzen 5 4600H-16-SSD-512-Full HD-15.6-6499.00-Acer-985249633
 Laptop-Notebook ASUS ROG Zephyrus-NVIDIA GeForce RTX 3080 16GB-Intel Core i7 10875H-16-SSD-512-LCD Anti Glare-15.6-32999.99-Asus-879346874

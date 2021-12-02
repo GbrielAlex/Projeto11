@@ -70,4 +70,7 @@ public class Produto{
     public String fichaTecnica(){
         return tipoEletronico.toString();
     }
+    public String toString(){
+        return this.nomeProduto;
+    }
 }

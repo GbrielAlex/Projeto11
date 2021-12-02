@@ -1,5 +1,8 @@
 package br.com.eletronicos;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class LojaEletronicos {
@@ -67,6 +70,7 @@ public class LojaEletronicos {
         carrinhoDeCompras.add(produto);
         return true;
     }
+
     public boolean addProdutoNoEstoque(Produto produto){
         for (Produto produtoAdcionar:this.produtos){
             if(produtoAdcionar.equals(produto)) {
@@ -109,15 +113,56 @@ public class LojaEletronicos {
         return todosProdutos;
     }
 
-    public boolean removerProdutoCarrinho(Produto produto){
+    public void removerProdutoCarrinho(Produto produto) throws NaoExisteProdutoException {
         int cont = 0;
-        for (Produto produtoARemover: carrinhoDeCompras)
-            if(produto.equals(produtoARemover)){
+        for (Produto produtoARemover: carrinhoDeCompras) {
+            if (produto.equals(produtoARemover)) {
                 carrinhoDeCompras.remove(cont);
-                return true;
+                return;
+            }
+            cont++;
         }
-        return false;
+        throw new NaoExisteProdutoException("Não existe produto "+produto.toString());
     }
 
+    public String mostrarNotaFiscal(){
+        String notaFiscal = this.getNome()+"\n"+
+                this.getLocal()+"\n"
+                + "cnpj: "+ this.getCnpj()+"\n";
+        double precoFinal = 0;
+        for (Produto produto:this.carrinhoDeCompras){
+            notaFiscal = notaFiscal + produto.getNomeProduto() + " R$" + produto.getPreco() +"\n";
+            precoFinal = precoFinal + produto.getPreco();
+        }
+        notaFiscal = notaFiscal + "Valor final: R$" + precoFinal;
+        return notaFiscal;
+    }
+    public void pegarDadosArquivo() throws IOException {
+        String linha;
+        int cont = 1;
+        String[] produto ;
+        FileReader produtos = new FileReader("/home/gabrielalexandre/IdeaProjects/Projeto 11/src/produtoslaptop.txt");
+        BufferedReader lerProdutos = new BufferedReader(produtos);
+        linha = lerProdutos.readLine();
+        while(linha != null) {
+            produto = linha.split("-");
+            if (produto[0].equals("Laptop")){
+                Laptop computador = new Laptop(Integer.parseInt(produto[4]),"DDR4",produto[3],produto[7],
+                        Double.parseDouble(produto[8]),Integer.parseInt(produto[6]), produto[5],produto[2]);
+                Produto produtoVender = new Produto(produto[1],Double.parseDouble(produto[9]),produto[10],computador,produto[11]);
+                this.addProdutoNoEstoque(produtoVender);
+            }else if (produto[0].equals("Desktop")){
+                Desktop computador = new Desktop(Integer.parseInt(produto[5]),produto[8],produto[3],Integer.parseInt(produto[7]),
+                        produto[6],produto[2],produto[4]);
+                Produto produtoVender = new Produto(produto[1],Double.parseDouble(produto[9]),"TrioDetech",computador,produto[10]);
+                this.addProdutoNoEstoque(produtoVender);
+            }else if (produto[0].equals("Movel")){
+                DispositivoMovel computador = new DispositivoMovel(Integer.parseInt(produto[2]),produto[5],produto[3],Double.parseDouble(produto[4]),Integer.parseInt(produto[6]));
+                Produto produtoVender = new Produto(produto[1],Double.parseDouble(produto[7]),produto[8],computador,produto[9]);
+                this.addProdutoNoEstoque(produtoVender);
+            }
+            linha = lerProdutos.readLine();
+        }
+    }
 
 }
