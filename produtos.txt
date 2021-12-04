@@ -1,0 +1,15 @@
+Laptop##Notebook Gamer 2AM E550##NVIDIA GeForce GTX 1050 3GB##Intel core i5 9400##8##SSD##128##Full HD##15.6##5999.00##Acer##176321679
+Laptop##Notebook IdeaPad Gaming##NVIDIA GeForce GTX 1650 4GB##Intel Core i5 10300H##8##SSD##128##Full HD##15.6##5999.00##Lenovo##097956876
+Laptop##Notebook Gamer Acer Nitro##NVIDIA GeForce GTX 1650 4GB##Ryzen 5 4600H##16##SSD##512##Full HD##15.6##6499.00##Acer##985249633
+Laptop##Notebook ASUS ROG Zephyrus##NVIDIA GeForce RTX 3080 16GB##Intel Core i7 10875H##16##SSD##512##LCD Anti Glare##15.6##32999.99##Asus##879346874
+Laptop##Apple MacBook Pro##Video Integrado M1 PRO##M1 PRo##16##SSD##1000##Full HD##14##32999.99##Apple##675248287
+Desktop##PC Gamer Smart ##Nvidia Geforce GTX 1660 6GB ##Intel core i5 2400##Placa mae H61 Afox ##8##HD ##1000##DDR3 ##5038.00##132473787
+Desktop##PC Gamer Facil##Nvidia Geforce GTX 1050 TI 4GB## Intel core i3 10100f##Placa mae H410 ASUS##8##HD##500##DDR4##5399.00##728837328
+Desktop##PC Gamer EasyPC##Nvidia Geforce GTX 1660 6GB##AMD Ryzen 5 3600##Placa mae B450m ASUS##16##SSD##480##DDR4##7955.00##078097045
+Desktop##PC Gamer VEGA##AMD Radeon Vega 11 2GB##AMD Ryzen 5 3400g##Placa mae A320m Asrock##8##SSD##480##DDR4##3799.00##487679556
+Desktop##PC Gamer Neologic##AMD Radeon RX 560 4GB##AMD Ryzen 5 5600g##Placa mae A520m ASUS##16##HD##1000##DDR4##5569.00##295068465
+Movel##Motorola Moto G30 ##4##IPS LCD ##6.5##Snapdragon 662 ##128##1259.00##Motorola##187549554
+Movel##Redmi 10 ##4##SuperAMOLED ##6.43##Snapdragon 678 ##128##1598.99##Xiaomi##985148542
+Movel##S21 ultra##16## DynamicAMOLED ##6.8##Exynos 2100 ##512##8499.00##Samsung##247652543
+Movel##iPad Pro##16##Liquid Retina IPS LCD ##12.9##Apple M1 ##512##10890.00##Apple##415986543
+Movel##ROG Phone 5##16##AMOLED ##6.78##Snapdragon 888##256##4839.00##Asus##432564823

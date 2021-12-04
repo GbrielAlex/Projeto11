@@ -113,16 +113,16 @@ public class LojaEletronicos {
         return todosProdutos;
     }
 
-    public void removerProdutoCarrinho(Produto produto) throws NaoExisteProdutoException {
+    public void removerProdutoCarrinho(String nomeProdutoARemover) throws NaoExisteProdutoException {
         int cont = 0;
         for (Produto produtoARemover: carrinhoDeCompras) {
-            if (produto.equals(produtoARemover)) {
+            if (nomeProdutoARemover.equals(produtoARemover.getNomeProduto())) {
                 carrinhoDeCompras.remove(cont);
                 return;
             }
             cont++;
         }
-        throw new NaoExisteProdutoException("Não existe produto "+produto.toString());
+        throw new NaoExisteProdutoException("Não existe produto "+nomeProdutoARemover.toString());
     }
 
     public String mostrarNotaFiscal(){
@@ -141,11 +141,11 @@ public class LojaEletronicos {
         String linha;
         int cont = 1;
         String[] produto ;
-        FileReader produtos = new FileReader("/home/gabrielalexandre/IdeaProjects/Projeto 11/src/produtoslaptop.txt");
+        FileReader produtos = new FileReader("produtos.txt");
         BufferedReader lerProdutos = new BufferedReader(produtos);
         linha = lerProdutos.readLine();
         while(linha != null) {
-            produto = linha.split("-");
+            produto = linha.split("##");
             if (produto[0].equals("Laptop")){
                 Laptop computador = new Laptop(Integer.parseInt(produto[4]),"DDR4",produto[3],produto[7],
                         Double.parseDouble(produto[8]),Integer.parseInt(produto[6]), produto[5],produto[2]);

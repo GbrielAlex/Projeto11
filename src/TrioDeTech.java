@@ -32,9 +32,9 @@ public class TrioDeTech {
             }else if(opcaoCliente.toUpperCase().equals("2")) {
                 String desejaRemocao  = JOptionPane.showInputDialog("Se desejar remover algum item digite REMOVER\n" + trioDeTech.mostrarProdutosCarrinho());
                 if (desejaRemocao.toUpperCase().equals("REMOVER")){
-                    int opcaoRemover = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero Referente ao produto que deseja remover do seu carrinho\n"+trioDeTech.mostrarProdutosCarrinho()));
+                    String opcaoRemover = JOptionPane.showInputDialog("Digite o nome Referente ao produto que deseja remover do seu carrinho\n"+trioDeTech.mostrarProdutosCarrinho());
                     try {
-                        trioDeTech.removerProdutoCarrinho(trioDeTech.getCarrinhoDeCompras().get(opcaoRemover-1));
+                        trioDeTech.removerProdutoCarrinho(opcaoRemover);
                         JOptionPane.showMessageDialog(null,"Produto removido com sucesso");
                     } catch (NaoExisteProdutoException e) {
                         JOptionPane.showMessageDialog(null,e.getMessage());
