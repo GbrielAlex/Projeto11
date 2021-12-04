@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class LojaEletronicos {
+public class LojaEletronicos implements LojaEletronicosInterface{
 
     private String nome;
     private String cnpj;
@@ -137,6 +138,7 @@ public class LojaEletronicos {
         notaFiscal = notaFiscal + "Valor final: R$" + precoFinal;
         return notaFiscal;
     }
+
     public void pegarDadosArquivo() throws IOException {
         String linha;
         int cont = 1;
@@ -163,6 +165,18 @@ public class LojaEletronicos {
             }
             linha = lerProdutos.readLine();
         }
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LojaEletronicos that = (LojaEletronicos) o;
+        return Objects.equals(nome, that.nome) && Objects.equals(cnpj, that.cnpj) && Objects.equals(local, that.local);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, cnpj, local);
     }
 
 }

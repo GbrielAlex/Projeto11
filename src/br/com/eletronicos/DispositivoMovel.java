@@ -24,18 +24,7 @@ public class DispositivoMovel extends Eletronico {
         this.tipoTela = tipoTela;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DispositivoMovel that = (DispositivoMovel) o;
-        return tamanhotela == that.tamanhotela && quantArmazenamento == that.quantArmazenamento && Objects.equals(tipoTela, that.tipoTela);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(tipoTela, tamanhotela, quantArmazenamento);
-    }
 
     public double getTamanhotela() {
         return tamanhotela;
@@ -53,7 +42,18 @@ public class DispositivoMovel extends Eletronico {
         this.quantArmazenamento = quantMemoria;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DispositivoMovel that = (DispositivoMovel) o;
+        return tamanhotela == that.tamanhotela && quantArmazenamento == that.quantArmazenamento && Objects.equals(tipoTela, that.tipoTela);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(tipoTela, tamanhotela, quantArmazenamento);
+    }
     public String toString(){
         return ("O produto tem "+super.getQuantMemoriaRam() + "GB de memoria ram, com uma tela " + this.tipoTela + " de " + this.tamanhotela +
                 " polegadas, e vem com um processador " + super.getProcessador() + " , mais "+ this.quantArmazenamento + " GB de amarzenamento");
