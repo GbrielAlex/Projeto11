@@ -8,7 +8,6 @@ public class DispositivoMovel extends Eletronico {
     private double tamanhotela;
     private int quantArmazenamento;
 
-
     public DispositivoMovel(int quantMemoriaRam, String processador, String tipoTela, double tamanhotela, int quantMemoria) {
         super(quantMemoriaRam,"Mobile",processador);
         this.tipoTela = tipoTela;
@@ -23,8 +22,6 @@ public class DispositivoMovel extends Eletronico {
     public void setTipoTela(String tipoTela) {
         this.tipoTela = tipoTela;
     }
-
-
 
     public double getTamanhotela() {
         return tamanhotela;
