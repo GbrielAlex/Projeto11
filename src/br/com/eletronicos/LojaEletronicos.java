@@ -14,6 +14,7 @@ public class LojaEletronicos implements LojaEletronicosInterface{
     private String local;
     private ArrayList<Produto> carrinhoDeCompras;
 
+
     public LojaEletronicos(String nome, String cnpj, ArrayList<Produto> produtos, String local) {
         this.nome = nome;
         this.cnpj = cnpj;
@@ -81,6 +82,7 @@ public class LojaEletronicos implements LojaEletronicosInterface{
         this.produtos.add(produto);
         return true;
     }
+
     public String emitirNotaFiscal(){
         String notaFiscal = this.getNome()+"\n"+
                 this.getLocal()+"\n"
@@ -94,6 +96,7 @@ public class LojaEletronicos implements LojaEletronicosInterface{
         this.carrinhoDeCompras = new ArrayList<>();
         return notaFiscal;
     }
+
     public String mostrarProdutos(){
         String todosProdutos = "";
         int cont = 1;
@@ -135,7 +138,7 @@ public class LojaEletronicos implements LojaEletronicosInterface{
             notaFiscal = notaFiscal + produto.getNomeProduto() + " R$" + produto.getPreco() +"\n";
             precoFinal = precoFinal + produto.getPreco();
         }
-        notaFiscal = notaFiscal + "Valor final: R$" + precoFinal;
+        notaFiscal = notaFiscal + "\nValor final: R$" + precoFinal+"\n";
         return notaFiscal;
     }
 
@@ -166,6 +169,7 @@ public class LojaEletronicos implements LojaEletronicosInterface{
             linha = lerProdutos.readLine();
         }
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

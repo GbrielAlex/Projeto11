@@ -33,19 +33,6 @@ public class Produto{
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Produto produto = (Produto) o;
-        return Objects.equals(nomeProduto, produto.nomeProduto) && Objects.equals(codigoBarra, produto.codigoBarra);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nomeProduto, codigoBarra);
-    }
-
     public String getMarca() {
         return marca;
     }
@@ -70,7 +57,22 @@ public class Produto{
     public String fichaTecnica(){
         return tipoEletronico.toString();
     }
+
     public String toString(){
         return this.nomeProduto;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(nomeProduto, produto.nomeProduto) && Objects.equals(codigoBarra, produto.codigoBarra);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nomeProduto, codigoBarra);
+    }
+
 }

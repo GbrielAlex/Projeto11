@@ -20,8 +20,4 @@ public interface LojaEletronicosInterface {
 
     void pegarDadosArquivo() throws IOException;
 
-
-
-
-
 }

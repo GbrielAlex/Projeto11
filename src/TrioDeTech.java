@@ -44,7 +44,11 @@ public class TrioDeTech {
                 }
             }else if(opcaoCliente.equals("3")){
                 String confirmarCompra = JOptionPane.showInputDialog(trioDeTech.mostrarNotaFiscal()+"Digite sim para confirmar a comprar");
-                JOptionPane.showMessageDialog(null, trioDeTech.emitirNotaFiscal());
+                if(confirmarCompra.toLowerCase().equals("sim")){
+                    JOptionPane.showMessageDialog(null, trioDeTech.emitirNotaFiscal());
+                }else {
+                    JOptionPane.showMessageDialog(null,"Compra cancelada");
+                }
 
             } else if(opcaoCliente.equals("4")){
                 continuarMenu = false;
