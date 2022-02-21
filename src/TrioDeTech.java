@@ -15,7 +15,7 @@ public class TrioDeTech {
         //A partir dessa linha começa a criação da menu grafico do projeto
         boolean continuarMenu = true;
         while (continuarMenu){
-            String opcaoCliente = JOptionPane.showInputDialog("TriodeTech \n" +
+            String opcaoCliente = JOptionPane.showInputDialog("TriodeJao \n" +
                     "Digite 1 para mostrar a lista de produtos\n" +
                     "Digite 2 para mostrar seu carrinho \n" +
                     "Digite 3 para comprar os itens no seu carinho\n"+
