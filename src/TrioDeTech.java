@@ -16,7 +16,7 @@ public class TrioDeTech {
         boolean continuarMenu = true;
         while (continuarMenu){
             String opcaoCliente = JOptionPane.showInputDialog("TriodeJao \n" +
-                    "Digite 1 para mostrar a lista de produtos\n" +
+                    "Digite 1 para aproximar a lista de produtos\n" +
                     "Digite 2 para mostrar seu carrinho \n" +
                     "Digite 3 para comprar os itens no seu carinho\n"+
                     "Digite 4 para adcionar um produto no estoque\n"+
@@ -65,13 +65,13 @@ public class TrioDeTech {
                 String codigo = String.valueOf(gerador.nextInt(999999999));
 
                 if (tipoComputador.toLowerCase().equals("dispositivel movel")){
-
                     String tipoTela = JOptionPane.showInputDialog("Qual o tipo de tela do dispositivo: ");
                     double tamanhoTela = Double.parseDouble(JOptionPane.showInputDialog("Qual o tamanho da tela: "));
                     double preco = Double.parseDouble(JOptionPane.showInputDialog("Qual o preço do produto:"));
                     eletronico = new DispositivoMovel(quantMemoriaRam,processador,tipoTela,tamanhoTela,armazenamento);
                     produto = new Produto(nome,preco,marca,eletronico,codigo);
                     trioDeTech.addProdutoNoEstoque(produto);
+
                 }else if(tipoComputador.toLowerCase().equals("desktop")){
                     String tipoArmazenamento = JOptionPane.showInputDialog("Qual o tipo de armazenamento");
                     String placaDeVideo = JOptionPane.showInputDialog("Qual é a placa de video do produto");
@@ -81,6 +81,7 @@ public class TrioDeTech {
                     eletronico = new Desktop(quantMemoriaRam,tipoMemoriaRam,processador,armazenamento,tipoArmazenamento,placaDeVideo,placaMae);
                     produto = new Produto(nome,preco,marca,eletronico,codigo);
                     trioDeTech.addProdutoNoEstoque(produto);
+
                 }else if(tipoComputador.toLowerCase().equals("laptop")) {
                     String tipoTela = JOptionPane.showInputDialog("Qual o tipo de tela do dispositivo: ");
                     double tamanhoTela = Double.parseDouble(JOptionPane.showInputDialog("Qual o tamanho da tela: "));
